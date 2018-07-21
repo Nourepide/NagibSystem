@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?scenebuilder /c ?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.nourepide.nagibSystem.Controller">
+    <children>
+        <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" pannable="true" prefHeight="550.0" prefWidth="375.0" vbarPolicy="NEVER" vvalue="1.0">
+            <content>
+                <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="548.0" minWidth="-Infinity" prefWidth="373.0">
+               <children>
+                  <VBox fx:id="chat" prefWidth="373.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets bottom="68.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children></AnchorPane>
+            </content>
+        </ScrollPane>
+        <HBox id="textArea" prefHeight="49.0" VBox.vgrow="ALWAYS">
+            <children>
+            <TextField fx:id="text" onAction="#send" promptText="Введите сообщение" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="4.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+                <Button fx:id="btn1" mnemonicParsing="false" onAction="#send" text="Отправить">
+                    <HBox.margin>
+                        <Insets left="4.0" right="4.0" top="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>
