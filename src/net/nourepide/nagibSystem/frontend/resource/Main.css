@@ -1,0 +1,80 @@
+@font-face {
+    src: url("SF-UI-Display-Regular.otf");
+}
+
+* {
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-font-family: 'SF UI Display';
+    -fx-font-smoothing-type: lcd;
+}
+
+.button {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    /*-fx-border-color: #a5a5a5;*/
+    -fx-background-color: WHITE;
+    -fx-cursor: HAND;
+}
+
+#cap {
+    -fx-background-image: url("Cap.png");
+}
+
+#messageTextField {
+    -fx-background-radius: 5 0 0 5;
+    -fx-border-radius: 5 0 0 5;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #d7d7d7;
+    -fx-background-color: WHITE;
+}
+
+#messageTextField .content {
+    -fx-background-color: WHITE;
+}
+
+#messageButton {
+    -fx-background-radius: 0 5 5 0;
+    -fx-border-radius: 0 5 5 0;
+}
+
+#chatBox {
+    -fx-background-image: url("Background.png");
+}
+
+#textArea {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: auto;
+}
+
+#message {
+    -fx-border-color: #2e80cb;
+    -fx-background-color: #3494e7;
+    -fx-text-fill: white;
+    -fx-cursor: DEFAULT;
+}
+
+#messageName {
+    -fx-background-radius: 5 0 0 5;
+    -fx-border-radius: 5 0 0 5;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #d7d7d7;
+    -fx-cursor: DEFAULT;
+}
+
+#messageText {
+    -fx-background-radius: 0 5 5 0;
+    -fx-border-radius: 0 5 5 0;
+    -fx-cursor: DEFAULT;
+}
