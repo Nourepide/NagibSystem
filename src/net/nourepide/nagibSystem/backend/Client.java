@@ -49,7 +49,26 @@ class Client {
                             nickname = rawNickname;
                         }
 
-                        message = "";
+                        continue;
+                    }
+
+                    if (message.indexOf("!w ") == 0 || message.indexOf("/w ") == 0) {
+                        String messagePrivate;
+
+                        messagePrivate = message.replace("!w ", "");
+                        messagePrivate = messagePrivate.replace("/w ", "");
+
+                        String[] strings = messagePrivate.split(" ", 2);
+
+                        if (strings.length != 2) {
+                            continue;
+                        }
+
+                        String nicknameUser = strings[0];
+                        String messageUser = strings[1];
+
+                        sendMessagePrivate(nicknameUser, messageUser);
+                        continue;
                     }
 
                     if (!message.equals("")) {
@@ -104,6 +123,23 @@ class Client {
             for (Client client : (Vector<Client>) clone) {
                 client.sendMessage(nickname, message);
             }
+        }
+    }
+
+    private void sendMessagePrivate(String nickname, String message) {
+        Client clientFounded = null;
+
+        for (Client client : server.clients) {
+            if (client.nickname.equals(nickname)) {
+                clientFounded = client;
+                break;
+            }
+        }
+
+        if (clientFounded != null) {
+            clientFounded.sendMessage(this.nickname, message);
+        } else {
+            sendMessage("Server", "User not found");
         }
     }
 }
